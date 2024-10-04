@@ -7,7 +7,7 @@ server_url = "opc.tcp://DESKTOP-ALRG67P:4840"  # Replace with your server URL
 client = Client(server_url)
 
 # Specify the name of the data source you want to browse
-target_data_source_name = "CELL_LINE_1"
+target_data_source_name = "AMFM"
 
 try:
     # Connect to the server

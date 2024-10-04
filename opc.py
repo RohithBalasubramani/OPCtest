@@ -7,7 +7,7 @@ server_url = "opc.tcp://DESKTOP-ALRG67P:4840"  # Replace with your server URL
 client = Client(server_url)
 
 # Specify the name of the data source you want to browse
-target_data_source_name = "MODULEUPS"
+target_data_source_name = "AMFM"
 
 try:
     # Connect to the server
@@ -28,6 +28,7 @@ try:
     for data_source in data_sources:
         if data_source.get_browse_name().Name == target_data_source_name:
             target_data_source = data_source
+            data= data_source.get_children()
             break
 
     if target_data_source is not None:
@@ -37,6 +38,7 @@ try:
         tags = target_data_source.get_children()
         for tag in tags:
             print(f"  Tag: {tag} (Node ID: {tag.nodeid})")
+            print()
     else:
         print(f"Data source '{target_data_source_name}' not found")
 
